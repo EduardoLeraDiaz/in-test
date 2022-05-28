@@ -2,7 +2,7 @@
 
 namespace App\Domain\Team;
 
-class PowerValueNotAllowed extends \Exception
+class PowerValueNotAllowedException extends \Exception
 {
     public const MESSAGE = 'Power value %d is not allowed';
 

@@ -6,7 +6,7 @@ use App\Application\FootballMatch\UseCase\PlayFootballMatchRequest;
 use App\Application\FootballMatch\UseCase\PlayFootballMatchUseCase;
 use App\Domain\FootballMatch\FootballMatch;
 use App\Domain\Team\Power;
-use App\Domain\Team\PowerValueNotAllowed;
+use App\Domain\Team\PowerValueNotAllowedException;
 use App\Domain\Team\Team;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +26,7 @@ class PlayFootballMatchController
     {
         try {
            $footballMatch = $this->parseAndValidateRequest($request);
-        } catch(BadRequestHttpException|PowerValueNotAllowed $exception) {
+        } catch(BadRequestHttpException|PowerValueNotAllowedException $exception) {
             return new JsonResponse($exception->getMessage(), Response::HTTP_BAD_REQUEST );
         }
 

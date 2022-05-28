@@ -8,7 +8,7 @@ class Power
     const MAX_POWER_ALLOWED = 80;
 
     /**
-     * @throws PowerValueNotAllowed
+     * @throws PowerValueNotAllowedException
      */
     public function __construct(readonly int $value)
     {
@@ -16,12 +16,12 @@ class Power
     }
 
     /**
-     * @throws PowerValueNotAllowed
+     * @throws PowerValueNotAllowedException
      */
     private function guard(): void
     {
         if ($this->value < self::MIN_POWER_ALLOWED || $this->value > self::MAX_POWER_ALLOWED) {
-            throw PowerValueNotAllowed::create($this->value);
+            throw PowerValueNotAllowedException::create($this->value);
         }
     }
 }
