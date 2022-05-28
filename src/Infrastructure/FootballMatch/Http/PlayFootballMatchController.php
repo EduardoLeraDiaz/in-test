@@ -18,6 +18,7 @@ class PlayFootballMatchController
     const BAD_REQUEST_MESSAGE = 'Request needs a home and a visitor with name and power';
     const POWER_NOT_NUMERIC_MESSAGE = 'Power has to be a number';
 
+    /** TODO: Use a command bus instead of instantiate directly the use cases */
     public function __construct(private PlayFootballMatchUseCase $useCase)
     {
     }
@@ -27,7 +28,7 @@ class PlayFootballMatchController
         try {
            $footballMatch = $this->parseAndValidateRequest($request);
         } catch(BadRequestHttpException|PowerValueNotAllowedException $exception) {
-            return new JsonResponse($exception->getMessage(), Response::HTTP_BAD_REQUEST );
+            return new JsonResponse(['error' => $exception->getMessage()], Response::HTTP_BAD_REQUEST );
         }
 
         $result = ($this->useCase)(new PlayFootballMatchRequest($footballMatch));

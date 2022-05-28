@@ -11,7 +11,7 @@ class GoalCalculatorService
         return $this->calculateGoals($chancesToMakeFirstGoal);
     }
 
-    private function calculateGoals(int $chances, $goals=0)
+    private function calculateGoals(float $chances, $goals=0)
     {
         if( rand(0,100) <= $chances ) {
             return $this->calculateGoals(max(floor($chances * 0.66), 1), ++$goals);
