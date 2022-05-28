@@ -1,0 +1,7 @@
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+hello-world:
+    path: /
+    controller: App\Controller\HelloWorldController
