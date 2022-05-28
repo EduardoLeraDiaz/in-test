@@ -1,2 +1,8 @@
+services:
+    _defaults:
+        autowire: false
+        autoconfigure: false
+        public: false
+
 imports:
     - { resource: '../src/Infrastructure/*/Resources/config/services.yaml' }

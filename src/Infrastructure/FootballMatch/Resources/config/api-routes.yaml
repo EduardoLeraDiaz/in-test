@@ -1,0 +1,6 @@
+play-match:
+  path: /play-match
+  methods: POST
+  format: json
+  controller: App\Infrastructure\FootballMatch\Http\PlayFootballMatchController
+

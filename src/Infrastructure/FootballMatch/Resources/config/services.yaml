@@ -1,0 +1,14 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  App\Infrastructure\FootballMatch\Http\:
+    resource: '../../Http'
+    tags: [ 'controller.service_arguments' ]
+
+  App\Application\FootballMatch\UseCase\:
+    resource: '../../../../Application/FootballMatch/UseCase/*UseCase.php'
+
+  App\Domain\FootballMatch\GoalCalculatorService:

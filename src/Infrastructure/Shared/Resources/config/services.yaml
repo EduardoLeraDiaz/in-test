@@ -10,3 +10,4 @@ services:
 
   App\Infrastructure\Shared\Http\:
     resource: '../../Http'
+    tags: [ 'controller.service_arguments' ]

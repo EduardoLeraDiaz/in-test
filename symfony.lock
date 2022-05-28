@@ -35,6 +35,9 @@
     "psr/log": {
         "version": "3.0.0"
     },
+    "symfony-bundles/json-request-bundle": {
+        "version": "4.1.2"
+    },
     "symfony/cache": {
         "version": "v6.0.8"
     },
