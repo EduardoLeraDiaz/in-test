@@ -1,7 +1,8 @@
+api:
+    resource: '../src/Infrastructure/{*}/Resources/config/api-routes.yaml'
+    prefix: /api/v1
+
 kernel:
     resource: ../src/Kernel.php
     type: annotation
 
-hello-world:
-    path: /
-    controller: App\Controller\HelloWorldController

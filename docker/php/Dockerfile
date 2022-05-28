@@ -25,6 +25,9 @@ RUN groupadd --gid $GID appuser
 RUN useradd -r -u $UID -g appuser appuser
 RUN echo '%appuser ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+RUN mkdir -p /home/appuser
+RUN chown appuser:appuser /home/appuser
+
 USER appuser
 
 

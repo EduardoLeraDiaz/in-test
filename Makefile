@@ -10,8 +10,11 @@ nodev:
 enter:
 	docker exec -ti insider_php /bin/bash
 
-enter-nginx:
+nginx-enter:
 	docker exec -ti insider_nginx /bin/bash
+
+nginx-reload:
+	docker exec -ti insider_nginx service nginx reload
 
 status:
 	docker-compose -p insider -f docker/docker-compose.yml ps

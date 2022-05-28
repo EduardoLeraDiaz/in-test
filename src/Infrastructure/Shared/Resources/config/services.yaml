@@ -1,0 +1,12 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  App\Infrastructure\Shared\Listener\ExceptionListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.exception }
+
+  App\Infrastructure\Shared\Http\:
+    resource: '../../Http'

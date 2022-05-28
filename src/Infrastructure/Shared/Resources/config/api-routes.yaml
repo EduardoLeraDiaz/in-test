@@ -1,0 +1,4 @@
+health-check:
+  path: /healthcheck
+  methods: GET
+  controller: App\Infrastructure\Shared\Http\HealthcheckController
