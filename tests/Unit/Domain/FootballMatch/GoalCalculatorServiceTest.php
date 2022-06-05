@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Domain\FootballMatch;
+namespace App\Tests\Unit\Domain\FootballMatch;
 
 use App\Domain\FootballMatch\GoalCalculatorService;
 use PHPUnit\Framework\TestCase;

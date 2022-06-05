@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Infrastructure\FootballMatch\Http;
+namespace App\Tests\Unit\Infrastructure\FootballMatch\Http;
 
 use App\Application\FootballMatch\UseCase\PlayFootballMatchResult;
 use App\Application\FootballMatch\UseCase\PlayFootballMatchUseCase;

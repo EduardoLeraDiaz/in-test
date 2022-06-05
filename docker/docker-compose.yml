@@ -11,8 +11,6 @@ services:
     container_name: insider_php
     networks:
       - backend
-    ports:
-      - "9000:9000"
     volumes:
       - ../:/app
 

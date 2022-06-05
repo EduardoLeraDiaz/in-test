@@ -11,7 +11,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng-dev \
-    libonig-dev
+    libonig-dev \
+    nodejs \
+    npm
 
 RUN docker-php-ext-install ctype iconv session mbstring
 

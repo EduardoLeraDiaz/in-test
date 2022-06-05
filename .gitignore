@@ -1,6 +1,7 @@
 /vendor
 /var
 /.idea
+/public
 
 ###> phpunit/phpunit ###
 /phpunit.xml
