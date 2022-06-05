@@ -43,9 +43,9 @@ export default {
               let teamsAmount = remainingTeams.length;
 
               let totalPoints=0;
-              remainingTeams.forEach(tableRow => totalPoints = totalPoints+tableRow.points);
+              remainingTeams.forEach(tableRow => totalPoints = totalPoints+tableRow.points+remainingMatches);
 
-              let prediction = (tableRow.points/Math.max(totalPoints,0.1)) * 100;
+              let prediction = ((tableRow.points+remainingMatches)/Math.max(totalPoints,0.1)) * 100;
               return {name:tableRow.name, prediction: Math.round(prediction) }
           }).sort((predictionA, predictionB) => {
             return predictionB.prediction - predictionA.prediction;

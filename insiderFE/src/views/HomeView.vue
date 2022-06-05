@@ -12,7 +12,7 @@
       </div>
       <div class="row buttons-banner g-0">
         <div class="col">
-          <button type="button" class="btn btn-secondary" :disabled="loading || isLeagueOver">Play All</button>
+          <button type="button" class="btn btn-secondary" :disabled="loading || isLeagueOver" v-on:click.stop.prevent="loading=true;playAll()">Play All</button>
         </div>
         <div class="col text-center">
           <div v-if="loading" class="spinner-border" role="status"><span class="sr-only"></span></div>
@@ -57,6 +57,15 @@ import Predictions from "../components/Predictions.vue";
     methods:  {
       playNextWeek() {
         this.$store.dispatch('playNextWeek').then(()=>{this.loading=false});
+      },
+      playAll() {
+        this.$store.dispatch('playNextWeek').then(()=>{
+          if (this.isLeagueOver) {
+            this.loading = false;
+            return;
+          }
+          this.playAll();
+        })
       }
     }
   }
