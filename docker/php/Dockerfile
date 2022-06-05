@@ -11,13 +11,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libjpeg62-turbo-dev \
     libmcrypt-dev \
     libpng-dev \
-    libonig-dev \
-    nodejs \
-    npm
+    libonig-dev
 
 RUN docker-php-ext-install ctype iconv session mbstring
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# install node
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
 
 # Manage user
 ARG UID=1001

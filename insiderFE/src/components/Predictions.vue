@@ -29,7 +29,6 @@ export default {
     teamsAndPredictions() {
         let remainingMatches = this.league.totalMatchDays-this.leagueTableRows[0].plaid
         let teamsWithoutPossibilities = []
-        console.log('remainingMatches', remainingMatches);
         return this.leagueTableRows
           .filter(tableRow =>{
               let differencePointsWithLeader = this.leagueTableRows[0].points-tableRow.points;

@@ -6,6 +6,10 @@ dev:
 composer:
 	docker exec -ti insider_php composer install
 
+build-fe:
+	docker exec -w /app/insiderFE insider_php sh -c "npm run build"
+
+
 test-unit:
 	docker exec -ti insider_php vendor/bin/phpunit
 
