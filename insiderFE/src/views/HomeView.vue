@@ -23,8 +23,9 @@
       </div>
     </div>
     <div class="col">
-      <div>isLeagueOver {{isLeagueOver}}</div>
-      <predictions/>
+      <div class="predictions-wrapper">
+        <predictions/>
+      </div>
     </div>
   </div>
 </template>
@@ -44,15 +45,6 @@ import Predictions from "../components/Predictions.vue";
       return {
         loading: false
       }
-    },
-    mounted() {
-      this.league.matchDays.forEach((matchDay) => {
-        console.log(matchDay.matchDayNumber);
-        matchDay.matches.forEach((match) => {
-          console.log(match.home?.name+'-'+match.visitor?.name);
-
-        })
-      });
     },
     computed: {
       league() {
@@ -94,6 +86,9 @@ import Predictions from "../components/Predictions.vue";
         border: 1px solid black;
         border-collapse: collapse;
       }
+    }
+    .predictions-wrapper {
+      margin: 10px;
     }
   }
 </style>

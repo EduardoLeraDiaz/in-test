@@ -97,6 +97,7 @@ export default function(teams) {
         actualMatchDayNumber: 1,
         totalMatchDays,
         matchDays: getMatchDays(teams),
+        teams: teams,
         nextMatchDay() {
           if (this.actualMatchDayNumber < totalMatchDays) {
               this.actualMatchDayNumber++;
@@ -104,10 +105,6 @@ export default function(teams) {
         },
         getActualMatchDay() {
             return this.matchDays[this.actualMatchDayNumber-1];
-        },
-
+        }
     }
 }
-
-
-
